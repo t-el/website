@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeBoot|</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+     <style>
+         html{
+             font-size: 10pt;
+             scroll-behavior: smooth;
+             font-weight: bold;
+         }
+      #source-code-bar a{
+          padding: 2px;
+      }
+        nav ul li {
+             list-style: none;
+             display: inline;
+            
+         }
+         nav ul li a{
+             font-size:8pt;
+            padding: 15px;
+            transition: 0.1s cubic-bezier(0.075, 0.82, 0.165, 0); margin-left: 20px;
+            font-weight: bold;
+         }
+      
+         nav ul li a:hover{
+           border-bottom: 3px solid #179cde;
+           border-radius: 2px 2px 0 0;
+           transition: 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+           
+         }
+         #humburg{
+            display: none;
+        }
+        #menu-item-mobile{
+            display: block;
+        }
+         nav ul li a:active{
+            border-bottom: 3px solid rgb(152, 200, 245);
+          }
+         h2:hover::after{
+             content: " #";
+         }
+         h2{
+             border-left: 8px solid #179cde;
+              padding: 3px;
+
+            
+         }
+         #copy:hover{
+             font-weight: bold;
+         }
+        i{
+            font-weight: bold;
+            font-style: normal;
+        }
+        @media only screen and (max-width: 600px) {
+            #container{
+                padding-top: 15%;
+            }
+            #header{
+                width: 100%;
+                margin: 1px;
+            }
+            #carboon{
+                display: none;
+            }
+            #nav >ul>li{
+                display: none;
+            }
+            #git{
+                display: none;
+            }
+            #humburg{
+                display: block;
+            }
+            #menu-item-mobile{
+
+                display: none;
+                position:absolute;
+                right:0;top:40px;
+                z-index:300000;
+                border-radius:0;
+                width: 100%;
+                padding:12px;
+            }
+          }
+     </style>
+</head>
+<body>
+
+    <nav id="nav" style="position: fixed;top:0;width:100%;z-index:1000;border-radius: 0;border-bottom:10px solid rgb(0, 0, 0,0.2);border-radius:1rem;"  class="nav bg-light p-2 shadow ">
+        <ul  class="ml-5">
+            <h3 style="font-family: fantasy;color:rgb(0,0,0,0.2);"> # BeBot Python</h3>
+          
+            <li><a href="#team">Team</a></li>
+            <% if (!username) { %>
+              <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            <% } %>
+            <a href="#getstarted" class="btn btn-dark ml-4" style="border-radius:0;">Get Started</a>
+
+           <% if (username) { %>
+            <button onclick="$('#profile').slideToggle(500)" class="btn btn-primary" style="border-radius:0;"><%= username %> | <a style="color: rgb(160, 41, 41);" href="/logout">LogOut</a></button>
+           <% } %>
+        </ul>
+        
+        <div style="position:absolute;right: 0;">
+            
+            <img id="git" src="/imgs/github.svg" width="30" height="30" alt="" srcset="">
+            <a id="git" class="h6 mr-2" href="">GitHub</a>
+            <img disabled onclick="$('#menu-item-mobile').slideToggle(500)" id="humburg" class="ml-2" src="/imgs/menu.svg" width="30" height="30" alt="" srcset="">
+
+        </div>
+
+    </nav>
+
+
+      <div id="container" class="container"  style="margin-top: 8%;">
+          <div class="row"> 
+            <div id="header" class="m-5 col-md-5">
+                <h1>Welcom To BeBot Python</h1>
+                <h5>A Coctail Of Python language And C# For Python Devs To Use C# Fast GUI</h5>
+                <span class="btn btn-dark" style="border-radius:0;font-weight:bold;"> <i><img width="20px" class="card"  width="15" height="15" src="/imgs/download.svg" alt=""></i> <a style="color:white;" download="download" href="/files/BPSVEG v0.2 beta.zip">Download BeBot Python v0.2 beta (.zip)</a> </span>
+                <h6 class="mt-2" style="font-size: 8pt;"><kbd style="border-radius:0;">Free and open source , support the project</kbd><kbd style="border-radius:0;background: rgb(1, 73, 7);">2 Conterbuters</kbd></h6>
+                <h6><kbd style="border-radius:0;">Clone The Repo : <span style="color: aqua;">git clone https://www.github.io/com/</span><button style="border-radius:0;" class="ml-2 btn btn-sm btn-success">Copy</button></kbd></h6>
+            </div>
+            <div id="carboon"  class="col-6 ">
+                <img  src="/imgs/carbon.png"  height="500" alt="">
+            </div>
+          </div>
+          
+        
+      </div>
+
+     
+   <hr>
+     <div id="getstarted" class="container-fluid mr-2">
+        <h2>Get Started</h2>
+    <div class="">
+<pre style="border-radius: 0;" class="card">
+    <kbd style="border-radius: 0;position:relative;">Form1.cs</kbd> 
+    <code class="shadow">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+// This Is Library Of BeBot Python
+using BeBotPythonLib;         <kbd class="alert-info" style="border-radius: 0;"><i><img width="15" height="15" src="/imgs/info.png" alt=""></i>This is the BeBotPython Library where all the methodes defined</kbd>
+    </code>
+</pre>
+
+
+    </div>
+<pre style="border-radius: 0;" class="card">
+    <kbd style="border-radius: 0;position:relative;">Form1.cs </kbd>
+<code class="shadow">
+namespace Calculator
+{
+    public partial class Form1 : Form
+    {
+        BeBotPython.AsyncMode pyA = new BeBotPython.AsyncMode();  <kbd class="alert-info" style="border-radius: 0;"><i><img width="15" height="15" src="/imgs/info.png" alt=""></i> Python definition in real-time sync mode - it was written here to be at the class level</kbd>
+        
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            pyA.Py_RunPython(@"run\run.exe");            <kbd class="alert-warning" style="border-radius: 0;"><i><img width="15" height="15" src="/imgs/info.png" alt=""></i> Run Python environment</kbd>
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {   
+            pyA.Py_Set_Input(textBox1.Text);  // send the value to Python             
+
+            string res = pyA.Py_Get_PrintCS(300);    // get the resault from Python       
+
+            res_label.Text = res;   // print the resault in C# Label                   
+
+        }
+
+    }
+}
+    
+</code>
+</pre>
+
+
+</div>
+
+
+
+        </div>
+        
+<hr>
+
+     <div id="team" class="container-fluid mr-2">
+        <h2>Team</h2>
+        
+        <div  class="row ml-5">
+
+                <div class="col-md-4" >
+                        <div><img class="rounded" width="30" height="30" src="/imgs/cs.png" alt=""><a><b>Taha Elkarroumy</b></a></div>
+                        <div style="border-left: 1px dotted rgb(216, 216, 216);" class="ml-3">
+                            <span style="border-bottom: 1px dotted rgb(212, 212, 212);">&nbsp;&nbsp;&nbsp;</span><i> <img width="20" height="20" src="/imgs/job.png" alt=""> Website Developper</i><br>
+                    <span style="border-bottom: 1px dotted rgb(212, 212, 212);">&nbsp;&nbsp;&nbsp;</span><i> <img width="20" height="20" src="/imgs/expert_in.png" alt="">Expert In : Node Js , Django , Rust , ...</i><br>
+                    <span style="border-bottom: 1px dotted rgb(212, 212, 212);">&nbsp;&nbsp;&nbsp;</span><i> <img width="40" height="30" src="/imgs/linked-in.png" alt=""> <a href="https://www.linkedin.com/in/programming-skills-95ab641b9/">LinkedIn Profile</a> </i><br>
+
+
+                        </div>
+                </div>
+
+                <div class="col-md-4" >
+                    <div><img class="rounded" width="30" height="30" src="/imgs/cs.png" alt=""><a><b>Ahmad Fijr [BeBot Creator]</b></a></div>
+                    <div style="border-left: 1px dotted rgb(216, 216, 216);" class="ml-3">
+                        <span style="border-bottom: 1px dotted rgb(212, 212, 212);">&nbsp;&nbsp;&nbsp;</span><i> <img width="20" height="20" src="/imgs/job.png" alt=""> C# Expert</i><br>
+                    <span style="border-bottom: 1px dotted rgb(212, 212, 212);">&nbsp;&nbsp;&nbsp;</span><i> <img width="20" height="20" src="/imgs/expert_in.png" alt="">Expert In : C# , Async C# ,Python</i><br>
+                    <span style="border-bottom: 1px dotted rgb(212, 212, 212);">&nbsp;&nbsp;&nbsp;</span><i> <img width="40" height="30" src="/imgs/linked-in.png" alt=""> <a href="">LinkedIn Profile</a> </i><br>
+                   
+                    </div>
+            </div>
+
+
+         
+    
+        </div>
+     </div><hr>
+
+
+
+    <div class="card" style="border-radius:0;" id="menu-item-mobile">
+        <ul style="list-style: none;" class="list-group p-2">
+            <h3 style="font-family: fantasy;color:rgb(0,0,0,0.2);"> # BeBot Python</h3>
+            <li><a href="/">Docs</a></li>
+            <li><a href="#howtogetstarted">Code Samples </a></li>
+            <li><a href="#codesamples">Q&A</a></li>
+            <li><a href="#team">Comunity</a></li>
+            <li><a href="/">Team</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">register</a></li>
+            <hr>
+           
+        </ul>
+        
+    </div>
+
+     <center><kbd class="m-2" style="border-radius: 0;">copy right </kbd></center>
+</body>
+</html>

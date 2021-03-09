@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- partial("../views/header") -%> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeBot|Login Page</title>
+    <style>
+        input{
+            outline: none;
+            border: 1px solid rgb(233, 231, 231);
+            height:40px;
+            padding: 3px;
+        }
+        input:focus{
+            background: rgb(255, 255, 255);
+            border: 1px solid rgb(233, 231, 231);
+            box-shadow: 1px 1px 3px 3px rgb(230, 229, 229);
+        }
+    </style>
+</head>
+<body >
+        <div class="container">
+            <h1 style="color: darkgrey;">Register Form <h6 style="color: darkgrey;">welcom to our comunity</h6></h1>
+            <hr>
+             <a href="/">Back Home</a>
+             <form action="/register" method="POST">
+                    <div  style="margin: auto;width:40%;border-radius:0;" class="card p-2 mt-5 rounded">
+                    <span>username</span><input type="text" name="username" id="us">
+                    <span>password</span><input type="password" name="password" id="">
+                   
+                    <button onclick="" style="border-radius: 0;" class="btn btn-primary mt-2">Register</button>
+                </div>
+
+             </form>
+                
+
+        </div>
+        <center><button onclick="$('#FAQ').slideToggle(500)"  class="btn btn-warning  mt-2" style="border-radius:0;"><i><img width="15" height="15" src="/imgs/arrows.png" alt=""></i> FAQ</button></center>
+
+    <div style="">
+            <div id="FAQ"  class="card p-5" style="border-radius:5px;"> 
+                <h1>Who We Are ?</h1>
+                <hr>
+                <h2>BeBot Python | Python Environment Generator</h2>
+                <ul>
+                        <li><h6>It is a project that aims to provide an easy and effective way to enable Python programmers to build graphical interfaces easily, by taking advantage of the features of Visual studio and C # for Python.</h6></li>
+                        <li><h6>In fact, everyone knows very well that Python is an easy, fast, and excellent language to write, and it is much easier than C-Sharp and other languages, and even using its libraries and technology is very easy, as the same desired task may be written in Python and C Sharp, and in comparison, we find that what you write is the number of words And lines in C Sharp are many times smaller and easier to understand than other programmers when writing in Python, for example selenium. The same library is also present in C Sharp, but in terms of ease of use, Python definitely excels.</h6></li>
+                        <li><h6>Conclusion Python is unable to effectively build graphical interfaces on its own through well-known libraries, the process is not easy and time-consuming, but it is very superior in terms of technology and ease of writing, and in contrast we see the excellent C Sharp with graphical interfaces in terms of ease of creation and use of (interface), but in terms of Dealing with background processes (code) or libraries, it is hell for a Python programmer; Also, C-Sharp has properties that enable access to the operations and features of an operating system in a more customizable and seamless manner than Python. Each language has advantages and disadvantages, and here lies the great benefit of merging, making use of the capabilities of the two different languages, both with what they excel in.</h6></li>
+                        <h3>What is BeBot Python ?</h3>
+                        <li><h6>It is an algorithm and an idea to organize and arrange the relations between the two languages, according to a written style of the code. It allows building graphical interfaces using visual studio and C # only to connect graphical interface elements with each other, and this requires only knowledge of the basics of C # and then making an event for the elements, for example there is a button and when you click on the button, things happen in the background and here comes the use of BeBotPython, which represents a control interface for the Python environment Miniature virtualization, which allows the use and use of Python code via a miniature program like script that runs in the background</h6></li>
+         
+                        <h3>How do I get the microenvironment for Python ?</h3>
+                        <li><h6>Through the program BeBot Python small virtual environment generator or BPSVEG, which allows you to create a virtual mini-environment for Python in the form of an executable file, after selecting and specifying the desired libraries, and the more external libraries used, the greater the size of the virtual environment, and the creation of an interface between the two languages, and this The files will be transferred to the visual studio project <kbd>More on How To Get Started?</kbd></h6></li>
+         
+                        
+                        <h3>What is the difference between BeBotPython and IronPython ?</h3>
+                        <li><h6>It differs from IronPython in all the difference and dimension, as it represents Python version 2.7, which is a C-Sharp and its libraries, but with Syntax Python, and does not support creating easy interfaces from the visual studio by drag and drop method and easy control of properties, and it does not support modern libraries like normal Python<br>As for BeBotPython, the interface supports the Python environment that is basically in your device, regardless of the version of Python that is in your device, by creating a miniature Python environment from it, and of course it supports all versions of Python from 3 and above until the next versions are supported and libraries are automatically</h6></li>
+         
+                </ul>
+            </div>
+    </div>
+
+</body>
+</html>
