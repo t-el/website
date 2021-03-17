@@ -17,13 +17,13 @@
           </div>
         
         <form onsubmit="$('#inp2').val($('#textq').val())" action="" method="post">
-            <input style="display: none;" id="inp2" type="text" name="qbody" id="">
+            <input style="display: none;" id="inp2" type="text" name="qbody">
             <input class="alert-secondary rounded m-2"  type="submit" value="Post this Question">
         </form>
           
          
           <% q.forEach(element => { %>
-                     <div class="card m-2 p-2">
+                     <div class="card m-2 p-2 alert-secondary">
                          <% if (element.user == "Anonymose User?") { %>
                             <a style = "color:#ec3170;font-weight:bold;"><%= element.user %> </a> 
                          <% } else { %>
@@ -32,16 +32,45 @@
                           
                        <a style="color: rgb(83, 5, 151);font-weight:bold;"><%= element.time %> </a>
                             <div style="border-radius: 0;" class="card p-3">
-                                    <h6>
+                                    <h6 style="font-size: 8pt;">
+                                      <kbd>(?)</kbd>
                                         <%= element.body %> 
                                     </h6>
                             </div>
-                            <textarea id="text" class="p-3" style="border: #006c91;" type="text" placeholder="type answer here ..."></textarea>
-                            <form onsubmit="$('#inp').val($('#text').val())" action="/an" method="post">
-                                <input style="display: none;" id="inp" type="text" name="answer">
+                            <!-- <textarea id="textv" class="p-3" style="border: #006c91;" type="text" placeholder="type answer here ..."></textarea> -->
+                            <form onsubmit="" action="/an" method="POST">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">Answer</span>
+                                </div>
+                                    <input  class="form-control" id="inp" type="text" aria-describedby="basic-addon1" name="abody">
+                              </div>
+                               
                                 <input style="display: none;"  type="text" name="qid" value="<%= element._id %>">
                                 <input class="alert-secondary rounded"  type="submit" value="Answer">
                             </form>
+                            <div>
+                              <kbd style="background-color: lightseagreen;">Answers <%= element.answer.length %> </kbd><br>
+                              <hr>
+                              
+
+
+                              <% element.answer.forEach(answer => { %>
+                               
+                                <% if (answer.user == "Anonymose User?") { %>
+                                  <kbd style = "color:#ec3170;font-weight:bold;background:whitesmoke;"><a ><%= answer.user %> </a> </kbd>
+                               <% } else { %>
+                                <kbd style = "color:#5191f1;font-weight:bold;background:whitesmoke;"><a ><%= answer.user %> </a> </kbd>
+                                  <% } %>
+                                
+                             <a style="color: rgb(83, 5, 151);font-weight:bold;font-size: 8pt;"><%= answer.time %> </a>
+                                  <div style="border-radius: 0;" class="card p-3">
+                                          <h6 style="font-size: 8pt;">
+                                              <%= answer.body %> 
+                                          </h6>
+                                  </div>
+                              <% }) %>
+                            </div>
                      </div>
           <% }) %>
           <hr>

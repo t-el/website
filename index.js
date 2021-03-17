@@ -120,6 +120,7 @@ app.get("/qa",(req,res) =>{
     .catch(() =>{console.log("Can Not Connect To MongoDb")}) ;
     const Question = mongoose.model('Question', questionSchema);
     var resault = [];
+
     Question.find({}).exec().then(data => res.render("qa.ejs",{q:data})).catch(err =>console.log(err));
    
  });
@@ -160,8 +161,7 @@ app.get("/qa",(req,res) =>{
   
    const Question = mongoose.model('Question', questionSchema);
    const Answer = mongoose.model('Answer', answerSchema);
-   var an = {body:req.body.answer,time:today,user:username};
-   var answ = new Answer(an);
+   var answ = new Answer({body:req.body.abody,time:today,user:username});
    answ.save();
    Question.findById(req.body.qid).exec().then(question=> {
     // Answer.findById(answ._id).exec().then().catch(err => console.log("")
