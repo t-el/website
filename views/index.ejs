@@ -107,6 +107,7 @@
             <li><a href="/register">Register</a></li>
             <% } %>
             <a href="#getstarted" class="btn btn-dark ml-4" style="border-radius:0;">Get Started</a>
+            <li><a href="/qa">Q&A</a></li>
 
            <% if (username) { %>
             <button onclick="$('#profile').slideToggle(500)" class="btn btn-primary" style="border-radius:0;"><%= username %> | <a style="color: rgb(160, 41, 41);" href="/logout">LogOut</a></button>
@@ -127,11 +128,11 @@
       <div id="container" class="container"  style="margin-top: 8%;">
           <div class="row"> 
             <div id="header" class="m-5 col-md-5">
-                <h1>Welcom To BeBot Python</h1>
+                <h1 style="font-size: 40pt;">Welcom To BeBot Python</h1>
                 <h5>A Coctail Of Python language And C# For Python Devs To Use C# Fast GUI</h5>
                 <span class="btn btn-dark" style="border-radius:0;font-weight:bold;"> <i><img width="20px" class="card"  width="15" height="15" src="/imgs/download.svg" alt=""></i> <a style="color:white;" download="download" href="/files/BPSVEG v0.2 beta.zip">Download BeBot Python v0.2 beta (.zip)</a> </span>
                 <h6 class="mt-2" style="font-size: 8pt;"><kbd style="border-radius:0;">Free and open source , support the project</kbd><kbd style="border-radius:0;background: rgb(1, 73, 7);">2 Conterbuters</kbd></h6>
-                <h6><kbd style="border-radius:0;">Clone The Repo : <span style="color: aqua;">git clone https://www.github.io/com/</span><button style="border-radius:0;" class="ml-2 btn btn-sm btn-success">Copy</button></kbd></h6>
+               
             </div>
             <div id="carboon"  class="col-6 ">
                 <img  src="/imgs/carbon.png"  height="500" alt="">
@@ -245,13 +246,11 @@ namespace Calculator
     <div class="card" style="border-radius:0;" id="menu-item-mobile">
         <ul style="list-style: none;" class="list-group p-2">
             <h3 style="font-family: fantasy;color:rgb(0,0,0,0.2);"> # BeBot Python</h3>
-            <li><a href="/">Docs</a></li>
-            <li><a href="#howtogetstarted">Code Samples </a></li>
-            <li><a href="#codesamples">Q&A</a></li>
-            <li><a href="#team">Comunity</a></li>
-            <li><a href="/">Team</a></li>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/register">register</a></li>
+         
+            <% if (!username) { %>
+                <li><a href="/login">Login</a></li>
+              <li><a href="/register">Register</a></li>
+              <% } %>
             <hr>
            
         </ul>

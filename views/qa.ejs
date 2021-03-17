@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <%- partial("../views/header") -%> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A</title>
+</head>
+<body>
+    <div class="p-3" style="position: relative;background:rgba(189, 187, 187, 0.1);">
+        <h5> <a href="/" style="border-radius: 48%;color:blue; font-weight:bold;font-size:20pt;border:none;" class=" mb-2"><</a> Welcom to Question & Answer</h5>
+    </div>
+      <div  class="container"> 
+          <div class="card">
+            <textarea id="textq" class="p-3" style="border: #006c91;" type="text" placeholder="type Qeustion here ..."></textarea>
+          </div>
+        
+        <form onsubmit="$('#inp2').val($('#textq').val())" action="" method="post">
+            <input style="display: none;" id="inp2" type="text" name="qbody" id="">
+            <input class="alert-secondary rounded m-2"  type="submit" value="Post this Question">
+        </form>
+          
+         
+          <% q.forEach(element => { %>
+                     <div class="card m-2 p-2">
+                         <% if (element.user == "Anonymose User?") { %>
+                            <a style = "color:#ec3170;font-weight:bold;"><%= element.user %> </a> 
+                         <% } else { %>
+                            <a style = "color:#006c91;font-weight:bold;"><%= element.user %> </a> 
+                            <% } %>
+                          
+                       <a style="color: rgb(83, 5, 151);font-weight:bold;"><%= element.time %> </a>
+                            <div style="border-radius: 0;" class="card p-3">
+                                    <h6>
+                                        <%= element.body %> 
+                                    </h6>
+                            </div>
+                            <textarea id="text" class="p-3" style="border: #006c91;" type="text" placeholder="type answer here ..."></textarea>
+                            <form onsubmit="$('#inp').val($('#text').val())" action="/an" method="post">
+                                <input style="display: none;" id="inp" type="text" name="answer">
+                                <input style="display: none;"  type="text" name="qid" value="<%= element._id %>">
+                                <input class="alert-secondary rounded"  type="submit" value="Answer">
+                            </form>
+                     </div>
+          <% }) %>
+          <hr>
+          <p></p>
+        </div>
+        
+          
+      
+      </div>
+    
+</body>
+</html>
