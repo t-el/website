@@ -164,7 +164,8 @@ app.get("/qa",(req,res) =>{
    var answ = new Answer(an);
    answ.save();
    Question.findById(req.body.qid).exec().then(question=> {
-       question.answer.push(Answer.findById(answ._id).exec().then().catch(err => console.log("")));
+    // Answer.findById(answ._id).exec().then().catch(err => console.log("")
+       question.answer.push(answ);
        question.save();
     }).catch(err =>console.log(err));
    
